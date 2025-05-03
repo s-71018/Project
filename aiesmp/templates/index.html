@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health Consultation System</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f4f4f4; color: #333; }
+        .container { width: 500px; margin: 50px auto; padding: 20px; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); }
+        h1 { text-align: center; }
+        form label { font-weight: bold; }
+        form input[type="text"], form select { width: calc(100% - 20px); padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        form input[type="submit"] { width: 100%; padding: 10px; background: #5cb85c; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        form input[type="submit"]:hover { background: #4cae4c; }
+        p { font-size: 18px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Health Consultation System</h1>
+        <form action="/get_consultation" method="post">
+            <label for="fever">Fever (Yes/No):</label>
+            <input type="text" id="fever" name="Fever" required><br>
+        
+            <label for="cough">Cough (Yes/No):</label>
+            <input type="text" id="cough" name="Cough" required><br>
+        
+            <label for="fatigue">Fatigue (Yes/No):</label>
+            <input type="text" id="fatigue" name="Fatigue" required><br>
+        
+            <label for="difficulty_breathing">Difficulty Breathing (Yes/No):</label>
+            <input type="text" id="difficulty_breathing" name="Difficulty Breathing" required><br>
+        
+            <label for="age">Age:</label>
+            <input type="text" id="age" name="Age" required><br>
+        
+            <label for="gender">Gender (Male/Female):</label>
+            <input type="text" id="gender" name="Gender" required><br>
+        
+            <label for="blood_pressure">Blood Pressure (Normal/High):</label>
+            <input type="text" id="blood_pressure" name="Blood Pressure" required><br>
+        
+            <label for="cholesterol">Cholesterol Level (Normal/High):</label>
+            <input type="text" id="cholesterol" name="Cholesterol Level" required><br>
+        
+            <input type="submit" value="Get Consultation">
+        </form>
+        
+
+        {% if result %}
+        <div class="result">
+            <h3>Diagnosis:</h3>
+            <p>{{ result }}</p>
+        </div>
+        {% endif %}
+    </div>
+</body>
+</html>
